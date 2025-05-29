@@ -359,7 +359,7 @@ void MyStruct::pop_front() {
     shift_left(0);
 }
 
-MyStruct::const_iterator MyStruct::insert(const_iterator pos, const value_type& value) {
+MyStruct::iterator MyStruct::insert(iterator pos, const value_type& value) {
     size_type iter_index = pos.get_index();
     if (total_size == capacity()) {
         grow();
@@ -376,7 +376,7 @@ MyStruct::const_iterator MyStruct::insert(const_iterator pos, const value_type& 
     return {this, iter_index};
 }
 
-MyStruct::const_iterator MyStruct::erase(const_iterator pos) {
+MyStruct::iterator MyStruct::erase(iterator pos) {
     size_type iter_index = pos.get_index();
     if (iter_index >= total_size) {
         throw std::out_of_range("Iterator out of range");

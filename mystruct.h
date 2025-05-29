@@ -96,8 +96,8 @@ public:
     reference back();
     const_reference front() const;
     const_reference back() const;
-    const_iterator insert(const_iterator pos, const value_type& value);
-    const_iterator erase(const_iterator pos);
+    iterator insert(iterator pos, const value_type& value);
+    iterator erase(iterator pos);
     void clear();
     void shrink_to_fit();
 };
